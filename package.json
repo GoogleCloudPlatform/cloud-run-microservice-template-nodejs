@@ -1,0 +1,36 @@
+{
+  "name": "cloudrun-microservice-template",
+  "version": "1.0.0",
+  "description": "Template microservice for running on Cloud Run",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "NODE_ENV=development nodemon index.js | pino-pretty",
+    "lint": "eslint --ext *.js --ext test/*.js",
+    "fix": "eslint --fix --ext *.js --ext test/*.js",
+    "build": "gcloud builds submit --pack image=gcr.io/$GOOGLE_CLOUD_PROJECT/microservice-template:manual",
+    "deploy": "gcloud run deploy microservice-template --image gcr.io/$GOOGLE_CLOUD_PROJECT/microservice-template:manual --platform managed --region us-central1",
+    "test": "mocha test/app.test.js --check-leaks",
+    "system-test": "mocha test/system.test.js --timeout=180000"
+  },
+  "author": "Google LLC",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gcp-metadata": "^4.2.1",
+    "google-auth-library": "^6.1.3",
+    "pino": "^6.11.0",
+    "pino-http": "^5.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-google": "^0.14.0",
+    "got": "^11.8.2",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1"
+  }
+}
