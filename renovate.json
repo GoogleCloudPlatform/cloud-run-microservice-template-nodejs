@@ -1,5 +1,10 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "rangeStrategy": false,
+  "rebaseStalePrs": true,
+  "lockFileMaintenance": {
+    "enabled": true
+  }
 }
