@@ -21,7 +21,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "gcp-metadata": "^4.2.1",
-    "google-auth-library": "^7.0.0",
+    "google-auth-library": "^7.0.2",
     "pino": "^6.11.1",
     "pino-http": "^5.3.0"
   },
