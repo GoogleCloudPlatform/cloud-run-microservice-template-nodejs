@@ -1,10 +1,12 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    "docker:disable"
   ],
-  "rangeStrategy": false,
+  "pinVersions": false,
   "rebaseStalePrs": true,
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "recreateClosed": true
   }
 }
