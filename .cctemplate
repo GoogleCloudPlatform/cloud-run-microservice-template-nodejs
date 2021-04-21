@@ -9,8 +9,7 @@
       "name": "Cloud Run Microservice Template - Node.js",
       "description": "Basic microservice template for Cloud Run",
       "languages": [
-        "Node.js",
-        "Dockerfile"
+        "Node.js"
       ]
     }
   ]
