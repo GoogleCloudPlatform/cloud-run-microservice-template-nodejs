@@ -20,7 +20,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.17.1",
-    "gcp-metadata": "^4.2.1",
+    "gcp-metadata": "^5.0.0",
     "google-auth-library": "^8.0.0",
     "pino": "^7.0.0",
     "pino-http": "^6.0.0"
