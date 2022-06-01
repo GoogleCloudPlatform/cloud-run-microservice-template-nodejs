@@ -22,7 +22,7 @@
     "express": "^4.17.1",
     "gcp-metadata": "^5.0.0",
     "google-auth-library": "^8.0.0",
-    "pino": "^7.0.0",
+    "pino": "^8.0.0",
     "pino-http": "^7.0.0"
   },
   "devDependencies": {
