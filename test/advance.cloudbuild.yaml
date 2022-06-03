@@ -60,7 +60,7 @@ steps:
       set -e
       source /workspace/test/common.sh
       echo $(get_url ${BUILD_ID}) > _service_url
-      echo "Cloud Run URL for ${_SERVICE}-$BUILD_ID is $(cat _service_url)"
+      echo "Cloud Run URL for ${_SERVICE_NAME}-$BUILD_ID is $(cat _service_url)"
       echo $(get_idtoken) > _id_token
   env:
     - '_SERVICE_NAME=${_SERVICE_NAME}'
