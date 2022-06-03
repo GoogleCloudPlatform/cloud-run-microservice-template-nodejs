@@ -25,7 +25,7 @@ steps:
 # Setup resources for system tests
 
 - id: 'Build Container Image'
-  name: 'gcr.io/k8s-skaffold/pack'
+  name: 'gcr.io/k8s-skaffold/pack:latest'
   entrypoint: pack
   args:
     - build
@@ -46,8 +46,7 @@ steps:
   args:
     - '-c'
     - |
-      cat /dev/urandom | LC_CTYPE=C tr -dc 'a-z0-9' | head -c 15 > _short_id # Generate a random 15 character alphanumeric string (lowercase only)
-      gcloud run deploy ${_SERVICE_NAME}-$(cat _short_id) \
+      gcloud run deploy ${_SERVICE_NAME}-$BUILD_ID \
         --image $_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA \
         --region ${_DEPLOY_REGION} \
         --platform ${_PLATFORM} \
@@ -61,7 +60,7 @@ steps:
     - |
       set -e
       source /workspace/test/common.sh
-      echo $(get_url) > _service_url
+      echo $(get_url ${BUILD_ID}) > _service_url
       echo $(get_idtoken) > _id_token
   env:
     - '_SERVICE_NAME=${_SERVICE_NAME}'
@@ -86,7 +85,7 @@ steps:
     - '-c'
     - |
       gcloud container images delete $_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA --quiet
-      gcloud run services delete ${_SERVICE_NAME}-$(cat _short_id) --region ${_DEPLOY_REGION} --platform ${_PLATFORM} --quiet
+      gcloud run services delete ${_SERVICE_NAME}-$BUILD_ID --region ${_DEPLOY_REGION} --platform ${_PLATFORM} --quiet
 
 substitutions:
   _GCR_HOSTNAME: us.gcr.io
