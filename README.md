@@ -41,9 +41,6 @@ Learn how to use Cloud Code for:
 
 ### CLI tooling
 
-#### Pre-reqs
-
-
 #### Local development
 
 1. Set Project Id:
