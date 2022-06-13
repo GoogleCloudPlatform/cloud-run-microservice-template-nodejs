@@ -21,3 +21,6 @@ npm-debug.log
 # Exclude local IDE settings
 .idea/
 .vscode/
+
+# macOS
+**/.DS_Store
