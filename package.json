@@ -23,7 +23,7 @@
     "gcp-metadata": "^5.0.0",
     "google-auth-library": "^8.0.0",
     "pino": "^8.0.0",
-    "pino-http": "^7.0.0"
+    "pino-http": "^8.0.0"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
