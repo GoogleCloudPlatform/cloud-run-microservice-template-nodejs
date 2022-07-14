@@ -32,7 +32,7 @@ describe('System Tests', () => {
       },
       method: 'GET',
       throwHttpErrors: false,
-      retry: 3,
+      retry: 6,
     };
     const response = await got(BASE_URL, options);
     assert.strictEqual(response.statusCode, 200);
