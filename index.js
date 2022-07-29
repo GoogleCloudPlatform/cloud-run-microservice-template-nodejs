@@ -49,8 +49,8 @@ process.on('SIGTERM', () => {
 /**
  * Listen for interrupt signal for local testing
  */
- process.on('SIGINT', () => {
-  console.log("Caught interrupt signal. Exiting...");
+process.on('SIGINT', () => {
+  console.log('Caught interrupt signal. Exiting...');
   process.exit(0);
 });
 
