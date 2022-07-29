@@ -43,6 +43,15 @@ process.on('SIGTERM', () => {
   // Clean up resources on shutdown
   logger.info('Caught SIGTERM.');
   logger.flush();
+  process.exit(0);
+});
+
+/**
+ * Listen for interrupt signal for local testing
+ */
+ process.on('SIGINT', () => {
+  console.log("Caught interrupt signal. Exiting...");
+  process.exit(0);
 });
 
 main();
