@@ -32,6 +32,7 @@ steps:
     - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA' # Tag docker image with git commit SHA
     - '--builder=gcr.io/buildpacks/builder:v1'
     - '--path=.'
+    - '--env=GOOGLE_RUNTIME'
   env:
     # Explicitly specify GOOGLE_RUNTIME to prevent image being labelled as PHP
     # See https://github.com/GoogleCloudPlatform/buildpacks/issues/220
