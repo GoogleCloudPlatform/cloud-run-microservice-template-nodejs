@@ -11,15 +11,15 @@
 
 steps:
 - id: 'Install Testing Dependencies'
-  name: node:14-slim
+  name: node:16-slim
   args: ['npm', 'install']
 
 - id: 'Lint'
-  name: node:14-slim
+  name: node:16-slim
   args: ['npm', 'run', 'lint']
 
 - id: 'Run Unit Tests'
-  name: node:14-slim
+  name: node:16-slim
   args: ['npm', 'run', 'test']
 
 # Setup resources for system tests
