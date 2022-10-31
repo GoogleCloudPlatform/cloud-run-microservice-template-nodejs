@@ -4,7 +4,7 @@
   "description": "Microservice template for Cloud Run",
   "main": "index.js",
   "engines": {
-    "node": "16"
+    "node": "18"
   },
   "scripts": {
     "start": "node index.js",
