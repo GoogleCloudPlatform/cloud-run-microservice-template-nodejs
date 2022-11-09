@@ -1,12 +1,10 @@
 {
   "extends": [
-    "config:base",
-    "docker:disable"
+    "config:base"
   ],
-  "pinVersions": false,
-  "rebaseStalePrs": true,
   "lockFileMaintenance": {
     "enabled": true,
-    "recreateClosed": true
+    "recreateClosed": true,
+    "rebaseStalePrs": true
   }
 }
