@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Microservice template for Cloud Run",
   "main": "index.js",
+  "type": "module",
   "engines": {
     "node": "16"
   },
@@ -28,7 +29,7 @@
   "devDependencies": {
     "eslint": "^8.0.0",
     "eslint-config-google": "^0.14.0",
-    "got": "^11.8.2",
+    "got": "^12.5.3",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.7",
     "supertest": "^6.1.3"
