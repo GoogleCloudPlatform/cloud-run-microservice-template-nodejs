@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const app = require('./app');
-const {logger, initLogCorrelation} = require('./utils/logging');
-const {fetchProjectId} = require('./utils/metadata');
+import app from './app.js';
+import logging from './utils/logging.js';
+import metadata from './utils/metadata.js';
 
 /**
  * Initialize app and start Express server
@@ -23,17 +23,17 @@ const main = async () => {
   let project = process.env.GOOGLE_CLOUD_PROJECT;
   if (!project) {
     try {
-      project = await fetchProjectId();
+      project = await metadata.fetchProjectId();
     } catch (err) {
-      logger.warn('Could not fetch Project Id for tracing.');
+      logging.logger.warn('Could not fetch Project Id for tracing.');
     }
   }
   // Initialize request-based logger with project Id
-  initLogCorrelation(project);
+  logging.initLogCorrelation(project);
 
   // Start server listening on PORT env var
   const PORT = process.env.PORT || 8080;
-  app.listen(PORT, () => logger.info(`Listening on port ${PORT}`));
+  app.listen(PORT, () => logging.logger.info(`Listening on port ${PORT}`));
 };
 
 /**
@@ -41,8 +41,8 @@ const main = async () => {
  */
 process.on('SIGTERM', () => {
   // Clean up resources on shutdown
-  logger.info('Caught SIGTERM.');
-  logger.flush();
+  logging.logger.info('Caught SIGTERM.');
+  logging.logger.flush();
 });
 
-main();
+export default { server: main() };

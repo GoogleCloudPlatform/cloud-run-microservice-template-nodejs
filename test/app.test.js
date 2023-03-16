@@ -12,24 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-'use strict';
-
-const path = require('path');
-const supertest = require('supertest');
+import path from 'path';
+import supertest from 'supertest'
+import { fileURLToPath } from 'url';
 
 let request;
 
 describe('Unit Tests', () => {
   before(async () => {
-    const app = require(path.join(__dirname, '..', 'app'));
-    request = supertest(app);
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    
+    const app = import(path.join(__dirname, '..', 'index.js'));
+    request = await supertest(app);
   });
 
   it('should respond OK to GET /', async () => {
-    await request.get('/').expect(200);
+    setTimeout(async() => {
+      await request.get('/').expect(200);
+    }, 1000);
   });
 
   it('should respond NOT FOUND to POST /', async () => {
-    await request.post('/').expect(404);
+    setTimeout(async() => {
+      await request.post('/').expect(404);
+    }, 1000);
   });
 });

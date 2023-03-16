@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const gcpMetadata = require('gcp-metadata');
-const {GoogleAuth} = require('google-auth-library');
+import gcpMetadata from 'gcp-metadata';
+import {GoogleAuth} from 'google-auth-library';
 const auth = new GoogleAuth();
 
 /**
@@ -51,8 +51,8 @@ async function authenticatedRequest(url, method) {
   return response;
 }
 
-module.exports = {
+export default ({
   fetchProjectId,
   authenticatedRequest,
   fetchServiceRegion,
-};
+});
