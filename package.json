@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Microservice template for Cloud Run",
   "main": "index.js",
+  "type": "module",
   "engines": {
     "node": "16"
   },
