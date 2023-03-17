@@ -28,14 +28,10 @@ describe('Unit Tests', () => {
   });
 
   it('should respond OK to GET /', async () => {
-    setTimeout(async() => {
-      await request.get('/').expect(200);
-    }, 1000);
+    setTimeout(async () => await request.post('/').expect(200), 100);
   });
 
   it('should respond NOT FOUND to POST /', async () => {
-    setTimeout(async() => {
-      await request.post('/').expect(404);
-    }, 1000);
+    setTimeout(async () => await request.post('/').expect(404), 100);
   });
 });
