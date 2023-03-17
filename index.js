@@ -45,4 +45,4 @@ process.on('SIGTERM', () => {
   logging.logger.flush();
 });
 
-export default { server: main() };
+export default main();
