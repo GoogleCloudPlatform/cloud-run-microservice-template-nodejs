@@ -11,8 +11,8 @@
     "dev": "NODE_ENV=development nodemon index.js | pino-pretty",
     "lint": "eslint --ext *.js --ext test/*.js",
     "fix": "eslint --fix --ext *.js --ext test/*.js",
-    "build": "gcloud builds submit --pack image=us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/samples/microservice-template:manual",
-    "deploy": "gcloud run deploy microservice-template --image us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/samples/microservice-template:manual --platform managed --region us-central1",
+    "build-image": "gcloud builds submit --pack image=us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/samples/microservice-template:manual",
+    "deploy": "gcloud run deploy microservice-template --image us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/samples/microservice-template:manual --region us-central1",
     "test": "mocha test/app.test.js --check-leaks",
     "system-test": "mocha test/system.test.js --timeout=180000"
   },
