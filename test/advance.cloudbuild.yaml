@@ -67,7 +67,7 @@ steps:
     - 'PROJECT_ID=${PROJECT_ID}'
   
 - id: 'Run System Tests'
-  name: node:14-slim
+  name: node:16-slim
   entrypoint: /bin/bash
   args:
     - '-c'
