@@ -14,8 +14,8 @@
 
 'use strict';
 
-const assert = require('assert');
-const got = require('got');
+import assert from 'assert';
+import got from 'got';
 
 describe('System Tests', () => {
   const {BASE_URL, ID_TOKEN} = process.env;
