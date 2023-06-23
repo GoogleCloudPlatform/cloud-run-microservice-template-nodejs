@@ -14,8 +14,8 @@
 
 'use strict';
 
-const assert = require('assert');
-const got = require('got');
+import assert from 'assert';
+import got from 'got';
 
 describe('System Tests', () => {
   const {BASE_URL, ID_TOKEN} = process.env;
@@ -32,7 +32,9 @@ describe('System Tests', () => {
       },
       method: 'GET',
       throwHttpErrors: false,
-      retry: 6,
+      retry: {
+        limit: 6,
+      },
     };
     const response = await got(BASE_URL, options);
     assert.strictEqual(response.statusCode, 200);

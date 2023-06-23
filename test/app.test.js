@@ -14,14 +14,13 @@
 
 'use strict';
 
-const path = require('path');
-const supertest = require('supertest');
+import app from '../app.js';
+import supertest from 'supertest';
 
 let request;
 
 describe('Unit Tests', () => {
   before(async () => {
-    const app = require(path.join(__dirname, '..', 'app'));
     request = supertest(app);
   });
 

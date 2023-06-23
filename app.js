@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const express = require('express');
-const {pinoHttp, logger} = require('./utils/logging');
+import express from 'express';
+import {pinoHttp, logger} from './utils/logging.js';
 
 const app = express();
 
@@ -29,4 +29,4 @@ app.get('/', async (req, res) => {
   res.send('Hello World!');
 });
 
-module.exports = app;
+export default app;
