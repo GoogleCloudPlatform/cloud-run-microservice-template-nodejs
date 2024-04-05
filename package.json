@@ -27,7 +27,7 @@
     "pino-http": "^9.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
+    "eslint": "^9.0.0",
     "eslint-config-google": "^0.14.0",
     "got": "^14.0.0",
     "mocha": "^10.0.0",
