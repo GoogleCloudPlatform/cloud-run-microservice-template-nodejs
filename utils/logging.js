@@ -31,7 +31,7 @@ export const initLogCorrelation = (projectId) => {
  * https://cloud.google.com/run/docs/logging#special-fields
  */
 const formatters = {
-  level(label, number) {
+  level(label) {
     return { severity: label };
   },
 };
