@@ -23,8 +23,8 @@
     "express": "^4.19.2",
     "gcp-metadata": "^6.0.0",
     "google-auth-library": "^9.0.0",
-    "pino": "^8.0.0",
-    "pino-http": "^9.0.0"
+    "pino": "^9.0.0",
+    "pino-http": "^10.0.0"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
