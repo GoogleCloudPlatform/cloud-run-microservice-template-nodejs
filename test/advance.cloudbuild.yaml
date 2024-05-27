@@ -37,7 +37,7 @@ steps:
   name: 'gcr.io/cloud-builders/docker:latest'
   args:
     - push
-    - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA' 
+    - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
 
 - id: 'Deploy to Cloud Run'
   name: 'gcr.io/cloud-builders/gcloud:latest'
@@ -65,9 +65,9 @@ steps:
     - '_SERVICE_NAME=${_SERVICE_NAME}'
     - '_DEPLOY_REGION=${_DEPLOY_REGION}'
     - 'PROJECT_ID=${PROJECT_ID}'
-  
+
 - id: 'Run System Tests'
-  name: node:14-slim
+  name: node:20-slim
   entrypoint: /bin/bash
   args:
     - '-c'
