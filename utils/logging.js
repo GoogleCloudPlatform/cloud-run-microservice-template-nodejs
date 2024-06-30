@@ -29,6 +29,7 @@ export const initLogCorrelation = (projectId) => {
  * to the log level to be automatically parsed
  * https://github.com/winstonjs/winston#creating-custom-formats
  * https://cloud.google.com/run/docs/logging#special-fields
+ * https://getpino.io/#/docs/api?id=formatters-object
  */
 const formatters = {
   level(label) {
