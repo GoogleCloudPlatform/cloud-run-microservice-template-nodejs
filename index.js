@@ -24,7 +24,7 @@ const main = async () => {
   if (!project) {
     try {
       project = await fetchProjectId();
-    } catch (err) {
+    } catch {
       logger.warn('Could not fetch Project Id for tracing.');
     }
   }
