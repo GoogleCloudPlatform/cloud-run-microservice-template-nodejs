@@ -1,10 +1,10 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "recreateClosed": true,
-    "rebaseStalePrs": true
+    "recreateWhen": "always",
+    "rebaseWhen": "behind-base-branch"
   }
 }
