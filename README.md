@@ -78,7 +78,7 @@ Learn how to use Cloud Code for:
 
 2. Build the container using a buildpack:
     ```bash
-    npm run build
+    npm run build-image
     ```
     
 3. Deploy to Cloud Run:
