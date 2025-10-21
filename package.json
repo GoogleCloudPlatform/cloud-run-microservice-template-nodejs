@@ -21,10 +21,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "express": "^5.0.0",
-    "gcp-metadata": "^7.0.0",
+    "gcp-metadata": "^8.0.0",
     "google-auth-library": "^10.0.0",
-    "pino": "^9.0.0",
-    "pino-http": "^10.0.0"
+    "pino": "^10.0.0",
+    "pino-http": "^11.0.0"
   },
   "devDependencies": {
     "eslint": "^9.0.0",
