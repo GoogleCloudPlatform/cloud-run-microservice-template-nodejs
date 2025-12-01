@@ -20,7 +20,7 @@
   "author": "Google LLC",
   "license": "Apache-2.0",
   "dependencies": {
-    "express": "^5.0.0",
+    "express": "^5.2.0",
     "gcp-metadata": "^8.0.0",
     "google-auth-library": "^10.0.0",
     "pino": "^10.0.0",
